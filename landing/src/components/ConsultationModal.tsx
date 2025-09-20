@@ -49,7 +49,7 @@ export default function ConsultationModal({ onClose }: { onClose: () => void }) 
 
     try {
       setLoading(true);
-      const res = await fetch("/new-client", {
+      const res = await fetch("/api/new-client", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
