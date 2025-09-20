@@ -9,9 +9,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "No Todoist token" }, { status: 500 });
     }
 
-    // время UTC+3
     const createdAt = new Date();
-    const offsetMs = 3 * 60 * 60 * 1000; // +3 часа
+    const offsetMs = 3 * 60 * 60 * 1000;
     const utc3 = new Date(createdAt.getTime() + offsetMs);
     const formattedDate = utc3.toISOString().replace("T", " ").split(".")[0];
 
@@ -24,14 +23,14 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         content: `Новая заявка от ${body.name} ${body.surname}`,
         description: `Телефон: ${body.phone}
-Email: ${body.email}
-Telegram: ${body.telegram || "-"}
-WhatsApp: ${body.whatsapp || "-"}
-⏰ Время прихода: ${formattedDate}`,
+          Email: ${body.email}
+          Telegram: ${body.telegram || "-"}
+          WhatsApp: ${body.whatsapp || "-"}
+          ⏰ Время прихода: ${formattedDate}`,
         project_id: process.env.TODOIST_CLIENTS_PROJECT_ID,
         section_id: process.env.TODOIST_CLIENTS_SECTION_ID,
-        priority: 4, // 🔴 высокий приоритет → выше в списке
-        due_string: "today", // ставим на сегодня
+        priority: 4,
+        due_string: "today",
       }),
     });
 

@@ -1,23 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import ConsultationModal from "@/components/ConsultationModal";
+import Hero from "../components/Hero";
+import WhoWeHelp from "../components/WhoWeHelp";
+import About from "../components/About";
 
-export default function HomePage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+export default function Page() {
   return (
-    <div className="bg-white text-gray-900">
-      {/* 🔝 Навигация */}
-      <Header onConsultClick={() => setIsModalOpen(true)} />
-
-      {/* 1️⃣ Hero Section */}
-      <Hero onConsultClick={() => setIsModalOpen(true)} />
-
-      {/* 💬 Модалка */}
-      {isModalOpen && <ConsultationModal onClose={() => setIsModalOpen(false)} />}
-    </div>
+    <main className="w-full min-h-screen bg-white">
+      <Hero onConsultClick={() => {}} />
+      <About />
+      <WhoWeHelp />
+    </main>
   );
 }
