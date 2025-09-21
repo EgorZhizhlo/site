@@ -6,10 +6,10 @@ export default function Hero({ onConsultClick }: { onConsultClick: () => void })
       {/* Hero */}
       <section
         className="relative flex items-center justify-center h-screen w-full bg-cover bg-center mt-0"
-        style={{ backgroundImage: "url('/background-hero.jpg')" }}
+        style={{ backgroundImage: "url('/background-hero1.jpg')" }}
       >
         {/* Градиентный переход вниз */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white" />
+        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-white" />
 
         <div className="relative z-10 text-center max-w-4xl px-0">
           <h1 className="text-5xl md:text-7xl font-black text-[#3730A3] mb-6 animate-fadeIn">
